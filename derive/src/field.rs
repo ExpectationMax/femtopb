@@ -154,7 +154,7 @@ impl Field {
                 f.decode_match_arm(matched_tag, field, wire_type, msg_buf, remaining)
             }
             Field::UnknownFields(ref f) => {
-                f.decode_match_arm(field, wire_type, msg_buf, remaining, known_tags)
+                f.decode_match_arm(matched_tag, field, wire_type, msg_buf, remaining, known_tags)
             }
         }
     }
@@ -176,7 +176,7 @@ impl Field {
                 f.decode_raw_block(matched_tag, field, wire_type, msg_buf, remaining)
             }
             Field::UnknownFields(ref f) => {
-                f.decode_raw_block(field, wire_type, msg_buf, remaining, known_tags)
+                f.decode_raw_block(matched_tag, field, wire_type, msg_buf, remaining, known_tags)
             }
         }
     }
